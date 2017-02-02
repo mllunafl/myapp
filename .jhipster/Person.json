@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "address",
+            "otherEntityName": "address",
+            "relationshipType": "one-to-one",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "person"
+        },
+        {
+            "relationshipName": "email",
+            "otherEntityName": "email",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "person"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dob",
+            "fieldType": "LocalDate",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "Gender",
+            "fieldValues": "MALE, FEMALE, OTHER"
+        }
+    ],
+    "changelogDate": "20170202164938",
+    "dto": "no",
+    "service": "serviceClass",
+    "entityTableName": "person",
+    "pagination": "no"
+}

@@ -1,0 +1,26 @@
+{
+    "myappApp": {
+        "person" : {
+            "home": {
+                "title": "People",
+                "createLabel": "Crear nuevo Person",
+                "createOrEditLabel": "Crear o editar Person",
+                "search": "Search for Person"
+            },
+            "created": "Un nuevo Person ha sido creado con el identificador {{ param }}",
+            "updated": "Un Person ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Person ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Person {{ id }}?"
+            },
+            "detail": {
+                "title": "Person"
+            },
+            "name": "Name",
+            "dob": "Dob",
+            "gender": "Gender",
+            "address": "Address",
+            "email": "Email"
+        }
+    }
+}
