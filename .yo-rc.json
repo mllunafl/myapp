@@ -28,6 +28,7 @@
     "languages": [
       "en",
       "es"
-    ]
+    ],
+    "herokuAppName": "morning-shore-40853"
   }
 }
