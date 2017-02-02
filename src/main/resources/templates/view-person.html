@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Handling Form Submission</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Person</h1>
+	<table>
+		<tr>
+			<td></td>
+			<td>Name:</td>
+			<td th:text="${person.name}"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>DOB:</td>
+			<td th:text="${person.dob}"></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>Gender:</td>
+			<td th:if="${person.gender}" th:text="${person.gender}"></td>
+		</tr>
+		<tr th:if="${person.address != null}">
+			<td>
+				<a th:href="@{'/person/' + ${person.id} + '/address/' + ${person.address.id}}"><img src="/x.png"/></a>
+			</td>
+			<td>Address:</td>
+			<td th:text="${person.address.street} 
+			              + ', ' + ${person.address.city}
+			              + ', ' + ${person.address.stateAbbr}
+			              + ', ' + ${person.address.zip}">
+			</td>
+		</tr>
+		<tr th:each="email : ${person.emails}" >
+			<td>
+				<a th:href="@{'/person/' + ${person.id} + '/email/' + ${email.id}}"><img src="/x.png"/></a>
+			</td>
+			<td th:text="${email.email}"/>
+		</tr>
+	</table>
+	<br/>
+	<a th:href="@{'/person/' + ${person.id} + '?action=edit'}" th:text="Edit"></a>
+	&nbsp;&nbsp;&nbsp;
+	<a th:if="${person.address == null}" 
+	   th:href="@{'/person/' + ${person.id} + '/address'}" >Add Address</a>
+	&nbsp;&nbsp;&nbsp;
+	<a th:href="@{'/person/' + ${person.id} + '/email'}" >Add Email</a>
+	&nbsp;&nbsp;&nbsp;
+	<a th:href="@{'/person/' + ${person.id} + '?action=delete'}" th:text="Delete"></a>
+	&nbsp;&nbsp;&nbsp;
+	<a href="/persons">Back</a>
+		
+</body>
+</html>
